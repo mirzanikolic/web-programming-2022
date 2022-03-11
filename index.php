@@ -1,5 +1,3 @@
 <<?php
-
-echo "HELLO GUYS";
-
+echo "hey";
  ?>
