@@ -1,0 +1,17 @@
+{
+    "name": "pc/web-programming-2022",
+    "autoload": {
+        "psr-4": {
+            "Pc\\WebProgramming2022\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mirza Nikolic",
+            "email": "mirza.nikolic@gmail.com"
+        }
+    ],
+    "require": {
+        "mikecao/flight": "^2.0"
+    }
+}
