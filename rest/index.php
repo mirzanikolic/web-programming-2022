@@ -41,11 +41,4 @@ Flight::route('DELETE /users/@id', function($id){
 
 Flight::start();
 
-
-
-
-
-
-
-
  ?>
