@@ -28,14 +28,12 @@ Flight::route('POST /users', function(){
 Flight::route('PUT /users/@id', function($id){
   $data = Flight::request()->data->getData();
   $data['id'] = $id;
-  Flight::json(Flight::todoDao()->update($data));
+  Flight::json(Flight::ProjectDao()->updateById($data));
 });
 
-/**
-* Delete user
-*/
+//Delete user
 Flight::route('DELETE /users/@id', function($id){
-  Flight::todoDao()->delete($id);
+  Flight::ProjectDao()->delete($id);
   Flight::json(["message" => "deleted"]);
 });
 

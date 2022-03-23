@@ -41,8 +41,8 @@ class ProjectDao{
   }
 
   public function updateById($users){
-    $stmt = $this->conn->prepare("UPDATE Users SET (name =: name, surname =: surname, city =: city, age =: age, e-mail =: e-mail ) WHERE id := id");
-    $stmt -> execute($users);
+    $stmt = $this->conn->prepare('UPDATE Users SET name =: name, surname =: surname WHERE id=:id');
+    $stmt->execute($users);
     return $users;
   }
 
