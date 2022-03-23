@@ -34,7 +34,7 @@ class ProjectDao{
   }
 
   public function getOne($id){
-    $stmt = $this->conn->prepare("SELECT * FROM Users WHERE id =: id");
+    $stmt = $this->conn->prepare('SELECT * FROM Users WHERE id=:id');
     $stmt->execute(['id' => $id]);
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return reset($result);
