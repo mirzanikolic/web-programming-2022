@@ -5,13 +5,13 @@ class ProjectDao{
   private $conn;
 
   public function __construct(){
-  $servername = "sql.freedb.tech";
-  $username = "freedb_mirza";
-  $password = "?BA2xCExbsPfFrx";
-  $schema = "users";
+  $servername = "sql11.freemysqlhosting.net";
+  $username = "sql11481005";
+  $password = "u1CdridxHm";
+  $schema = "sql11481005";
 //damir
   try {
-    $this->conn = new PDO("mysql:host=$servername;dbname=freedb_bazatest", $username, $password);
+    $this->conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
     // set the PDO error mode to exception
     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     echo "Connected successfully";
@@ -21,8 +21,8 @@ class ProjectDao{
   }
 
   public function addUser($users){
-    $stmt = $this->conn->prepare("INSERT INTO Users (name, surname, city, age, e-mail) VALUES (:name, :surname, :age, :city, :e-mail)");
-    $stmt->execute($users);
+    $stmt = $this->conn->prepare("INSERT INTO Users (name, surname) VALUES (:name, :surname)");
+    $stmt->execute(['name'=>$users['name'], 'surname'=>$users['surname']]);
     $users['id'] = $this->conn->lastInsertId();
     return $users;
   }
