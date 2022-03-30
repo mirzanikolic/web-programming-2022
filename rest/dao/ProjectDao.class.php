@@ -11,7 +11,6 @@ class ProjectDao{
   $password = "?BA2xCExbsPfFrx";
   $schema = "users";
 
-
   try {
     $this->conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
     // set the PDO error mode to exception
