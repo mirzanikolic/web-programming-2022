@@ -6,10 +6,12 @@ class ProjectDao{
 
   public function __construct(){
 
-  $servername = "sql.freedb.tech";
-  $username = "freedb_mirza";
-  $password = "?BA2xCExbsPfFrx";
-  $schema = "users";
+
+
+  $servername = "sql11.freemysqlhosting.net";
+  $username = "sql11481005";
+  $password = "u1CdridxHm";
+  $schema = "sql11481005";
 
   try {
     $this->conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
