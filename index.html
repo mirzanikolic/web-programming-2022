@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact us</a>
@@ -49,6 +49,7 @@
 
   </main>
 </body>
+
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -80,40 +81,40 @@
   }
 
   function showModal(id){
-    $('.todo-button').attr('disabled', true);
-    $.get('rest/todos/'+id, function(data){
+    $('.users-button').attr('disabled', true);
+    $.get('rest/users/'+id, function(data){
       console.log(data);
-      $("#description").val(data.description);
       $("#id").val(data.id);
-      $("#created").val(data.created);
+      $("#name").val(data.name);
+      $("#surname").val(data.surname);
       $("#exampleModal").modal("show");
-      $('.todo-button').attr('disabled', false);
+      $('.users-button').attr('disabled', false);
     })
   }
 
-  function saveTodo(){
-    $('.save-todo-button').attr('disabled', true);
-    var todo = {};
+  function saveUser(){
+    $('.save-user-button').attr('disabled', true);
+    var user = {};
 
-    todo.description = $('#description').val();
-    todo.created = $('#created').val();
+    user.name = $('#name').val();
+    user.surname = $('#surname').val();
 
     $.ajax({
-      url: 'rest/todos/'+$('#id').val(),
+      url: 'rest/users/'+$('#id').val(),
       type: 'PUT',
-      data: JSON.stringify(todo),
+      data: JSON.stringify(user),
       contentType: "application/json",
       dataType: "json",
       success: function(result) {
           $("#exampleModal").modal("hide");
-          $('.save-todo-button').attr('disabled', false);
-          $("#todo-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
-          getTodos(); // perf optimization
+          $('.save-user-button').attr('disabled', false);
+          $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
+          getUsers(); // perf optimization
           console.log(result);
       }
     });
 
-    console.log(todo);
+    console.log(user);
   }
 </script>
 
@@ -127,12 +128,12 @@
       </div>
       <div class="modal-body">
         <input id="id" type="hidden" />
-        <input id="description" type="text" />
-        <input id="created" type="hidden" />
+        <input id="name" type="text" />
+        <input id="surname" type="text" />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary save-todo-button" onclick="saveTodo()">Save changes</button>
+        <button type="button" class="btn btn-primary save-user-button" onclick="saveUser()">Save changes</button>
       </div>
     </div>
   </div>
