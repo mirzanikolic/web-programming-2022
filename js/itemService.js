@@ -32,7 +32,6 @@ var ItemService = {
       </div>`;
       }
       $("#users-list").html(html);
-      console.log(data);
     });
   },
 
@@ -46,6 +45,7 @@ var ItemService = {
         success: function(result) {
             $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
             ItemService.list();
+            console.log(newUser);
           }
     });
   },
@@ -79,7 +79,6 @@ var ItemService = {
         $('.save-user-button').attr('disabled', false);
         $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
         ItemService.list();
-        console.log(user);
       }
     });
   },
