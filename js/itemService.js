@@ -1,13 +1,13 @@
 var ItemService = {
-  init: function() {
-    $('#addUserModal').validate({
-      submitHandler: function(form) {
-        var newUser = Object.fromEntries((new FormData(form)).entries());
-        ItemService.add(newUser);
-      }
-    });
-    ItemService.list();
-  },
+  init: function(){
+      $('#addUserForm').validate({
+        submitHandler: function(form) {
+          var newUser = Object.fromEntries((new FormData(form)).entries());
+          ItemService.add(newUser);
+        }
+      });
+      ItemService.list();
+    },
 
   list: function() {
     $.get("rest/users", function(data) {
@@ -43,9 +43,9 @@ var ItemService = {
         contentType: "application/json",
         dataType: "json",
         success: function(result) {
+            $('#addUserModal').modal("hide");
             $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
             ItemService.list();
-            console.log(newUser);
           }
     });
   },
