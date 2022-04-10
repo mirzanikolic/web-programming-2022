@@ -10,7 +10,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #e3f2fd;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">FindTutors</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,6 +40,11 @@
   <main>
     <div class="container marketing" style="margin-top:100px;">
       <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div>
+          <button class="btn btn-outline-info btn-lg mb-4" data-bs-toggle="modal" data-bs-target="#addUserModal">Add user</button>
+        </div
+      </div>
       <div id="users-list" class="row">
         <div class="spinner-border" role="status">
           <span class="sr-only"></span>
@@ -57,32 +62,60 @@
 
 <script>
   // ajax get request from API
-  ItemService.getUsers();
-
+  ItemService.list();
 </script>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input id="id" type="hidden" />
-        <div class="form-group">
-          <label for="name">NAME</label>
-          <input id="name" type="text" name="name" class="form-control"/>
-          </div>
-        <input id="surname" type="text" />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary save-user-button" onclick="ItemService.saveUser()">Save changes</button>
+<<!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input id="id" type="hidden" />
+          <input id="name" type="text" />
+          <input id="surname" type="text" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary save-user-button" onclick="ItemService.update()">Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- Add Modal -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="addUserForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Name</label>
+              <input name="name" type="text" class="form-control required" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+              <label>Surname</label>
+              <input name="surname" type="text" class="form-control required" placeholder="Enter surname">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script>
+ItemService.init();
+</script>
 
 </html>
