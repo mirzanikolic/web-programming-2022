@@ -46,6 +46,7 @@ var ItemService = {
             $('#addUserModal').modal("hide");
             $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
             ItemService.list();
+            toastr.success("New user added succesfully");
           }
     });
   },
@@ -91,6 +92,7 @@ var ItemService = {
       success: function(result) {
         $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
         ItemService.list();
+        toastr.success("User deleted succesfully");
       }
     });
   },
