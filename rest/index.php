@@ -6,7 +6,6 @@ error_reporting(E_ALL);
 require_once '../vendor/autoload.php';
 require_once 'dao/UserDao.class.php';
 
-
 require_once 'services/UserService.php';
 
 Flight::register('userService', 'UserService');

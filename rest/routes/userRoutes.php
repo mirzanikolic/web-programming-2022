@@ -20,7 +20,7 @@ Flight::route('POST /users', function(){
 Flight::route('PUT /users/@id', function($id){
   $data = Flight::request()->data->getData();
   $data['id'] = $id;
-  Flight::json(Flight::userService()->update($data));
+  Flight::json(Flight::userService()->update($id, $data));
 });
 
 //Delete user
