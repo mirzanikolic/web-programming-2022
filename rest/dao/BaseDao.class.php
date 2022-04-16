@@ -1,4 +1,5 @@
 <?php
+
 class BaseDao{
 
   private $conn;

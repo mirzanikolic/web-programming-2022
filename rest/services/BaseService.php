@@ -1,4 +1,5 @@
 <?php
+
 abstract class BaseService {
 
   protected $dao;
@@ -27,4 +28,5 @@ abstract class BaseService {
     return $this->dao->delete($id);
   }
 }
+
 ?>

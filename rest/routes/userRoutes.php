@@ -1,5 +1,4 @@
 <?php
-//Routes for users
 
 //List all users
 Flight::route('GET /users', function(){
@@ -19,7 +18,6 @@ Flight::route('POST /users', function(){
 //Update user
 Flight::route('PUT /users/@id', function($id){
   $data = Flight::request()->data->getData();
-  $data['id'] = $id;
   Flight::json(Flight::userService()->update($id, $data));
 });
 
