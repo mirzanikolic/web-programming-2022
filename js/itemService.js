@@ -80,6 +80,7 @@ var ItemService = {
         $('.save-user-button').attr('disabled', false);
         $("#users-list").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
         ItemService.list();
+        toastr.success("User updated!");
       }
     });
   },
