@@ -3,17 +3,13 @@
 class BaseDao{
 
   private $conn;
-
   private $table_name;
 
-  /**
-  * constructor of dao class
-  */
   public function __construct($table_name){
     $this->table_name = $table_name;
-    $servername = "sql11.freemysqlhosting.net";
-    $username = "sql11481005";
-    $password = "u1CdridxHm";
+    $servername = "db-mysql-fra1-14872-do-user-11405473-0.b.db.ondigitalocean.com:25060";
+    $username = "doadmin";
+    $password = "AVNS_JbOB5s3UVvWG-ur";
     $schema = "sql11481005";
     $this->conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
     // set the PDO error mode to exception
