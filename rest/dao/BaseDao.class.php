@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__.'/../config/dbConfig.class.php';
 
 class BaseDao{
 
@@ -7,11 +8,12 @@ class BaseDao{
 
   public function __construct($table_name){
     $this->table_name = $table_name;
-    $servername = "db-mysql-fra1-14872-do-user-11405473-0.b.db.ondigitalocean.com:25060";
-    $username = "doadmin";
-    $password = "AVNS_JbOB5s3UVvWG-ur";
-    $schema = "sql11481005";
-    $this->conn = new PDO("mysql:host=$servername;dbname=$schema", $username, $password);
+    $servername = dbConfig::DB_HOST();
+    $username = dbConfig::DB_USERNAME();
+    $password = dbConfig::DB_PASSWORD();
+    $schema = dbConfig::DB_SCHEMA();
+    $port = dbConfig::DB_PORT();
+    $this->conn = new PDO("mysql:host=$servername;dbname=$schema;port=$port", $username, $password);
     // set the PDO error mode to exception
     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   }
@@ -83,7 +85,6 @@ class BaseDao{
     $results = $this->query($query, $params);
     return reset($results);
   }
-
 }
 
 ?>
