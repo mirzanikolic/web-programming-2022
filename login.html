@@ -8,27 +8,39 @@
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
   <link href="icon.ico" rel="icon" type="image/png">
 </head>
 
 <body>
   <main>
-    <div class="container marketing" style="margin-top:100px;">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <form id="login-form">
-          <div class="mb-3">
-            <label class="form-label">Email address</label>
-            <input type="email" name="email" autocomplete="on" class="form-control" placeholder="Enter your email" value="mirza.nikolic@gmail.com">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" name="password" autocomplete="on" class="form-control" placeholder="Enter your password" value="123">
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-      </div>
-    </div>
+    <section class="wrapper">
+ 		<div class="container">
+ 			<div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
+ 				<div class="logo">
+ 					<img src="icon.ico" class="img-fluid" alt="Logo">
+ 				</div>
+ 				<form id="login-form" class="rounded bg-white shadow py-5 px-4">
+ 					<h3 class="text-dark fw-bolder fs-4 mb-2">FindTutors</h3>
+ 					<div class="fw-normal text-muted mb-4"> New Here?
+ 						<a href="#" class="text-primary fw-bold text-decoration-none">Create an Account</a>
+ 					</div>
+ 					<div class="form-floating mb-3">
+ 						<input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+ 						<label for="floatingInput">Email address</label>
+ 					</div>
+ 					<div class="form-floating">
+ 						<input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+ 						<label for="floatingPassword">Password</label>
+ 					</div>
+ 					<div class="mt-2 text-end">
+ 						<a href="#" class="text-primary fw-bold text-decoration-none">Forgot Password?</a>
+ 					</div>
+ 					<button type="submit" class="btn btn-primary submit_btn w-100 my-4">Login</button>
+ 				</form>
+ 			</div>
+ 		</div>
+ 	</section>
   </main>
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>

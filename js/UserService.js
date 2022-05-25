@@ -1,6 +1,9 @@
 var UserService = {
   init: function() {
-
+    var token = localStorage.getItem("token");
+    if (token) {
+      window.location.replace("index.html");
+    }
     $('#login-form').validate({
       submitHandler: function(form) {
         var entity = Object.fromEntries((new FormData(form)).entries());
@@ -28,7 +31,7 @@ var UserService = {
     });
   },
 
-  logout: function(){
+  logout: function() {
     localStorage.clear();
     window.location.replace('login.html');
   }
