@@ -10,6 +10,8 @@ require_once __DIR__.'/dao/TutorDao.class.php';
 require_once __DIR__.'/services/UserService.php';
 require_once __DIR__.'/services/TutorService.php';
 
+Flight::register('userDao', 'UserDao');
+Flight::register('tutorDao', 'TutorDao');
 Flight::register('userService', 'UserService');
 Flight::register('tutorService', 'TutorService');
 

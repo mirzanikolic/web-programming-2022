@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>FindTutors</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link href="icon.ico" rel="icon" type="image/png">
+</head>
+
+<body>
+  <main>
+    <div class="container marketing" style="margin-top:100px;">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <form id="login-form">
+          <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" name="email" autocomplete="on" class="form-control" placeholder="Enter your email" value="mirza.nikolic@gmail.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" autocomplete="on" class="form-control" placeholder="Enter your password" value="123">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="js/UserService.js"></script>
+  <script type="text/javascript">
+    UserService.init();
+  </script>
+</body>

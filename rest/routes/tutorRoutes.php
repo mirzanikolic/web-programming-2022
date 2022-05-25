@@ -27,4 +27,9 @@ Flight::route('DELETE /tutors/@id', function($id){
   Flight::json(["message" => "deleted"]);
 });
 
+//Search tutor
+Flight::route('GET /tutors/search/@search', function($search){
+  Flight::json(Flight::tutorService()->get_by_search($search, 0, 10, '-id'));
+});
+
  ?>

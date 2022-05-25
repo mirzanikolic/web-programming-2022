@@ -11,7 +11,7 @@ var ItemService = {
 
   list: function() {
     $.get("rest/users", function(data) {
-
+      console.log()
       $("#users-list").html("");
 
       var html = "";

@@ -39,7 +39,7 @@ font-family: 'Montserrat', sans-serif;
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="button" onclick="UserService.logout()">Logout</button>
           </form>
         </div>
       </div>
@@ -52,6 +52,11 @@ font-family: 'Montserrat', sans-serif;
       <div class="row">
         <div>
           <button class="btn btn-outline-info btn-lg mb-4" data-bs-toggle="modal" data-bs-target="#addUserModal">Add user</button>
+        </div
+      </div>
+      <div class="row">
+        <div>
+          <button class="btn btn-outline-info btn-lg mb-4" data-bs-toggle="modal" data-bs-target="#addUserModal">Search</button>
         </div
       </div>
       <div id="users-list" class="row">
@@ -69,6 +74,8 @@ font-family: 'Montserrat', sans-serif;
 <script src="js/jquery.validate.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="js/itemService.js"></script>
+<script src="js/UserService.js"></script>
+
 
 <script>
   // ajax get request from API
@@ -125,7 +132,14 @@ font-family: 'Montserrat', sans-serif;
   </div>
 
 <script>
-ItemService.init();
+  var token = localStorage.getItem("token");
+  if(token){
+    ItemService.init();
+  }
+  else{
+    window.location.replace("login.html");
+  }
+
 </script>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../config/dbConfig.class.php';
+require_once __DIR__.'/../config/Config.class.php';
 
 class BaseDao{
 
@@ -8,11 +8,11 @@ class BaseDao{
 
   public function __construct($table_name){
     $this->table_name = $table_name;
-    $servername = dbConfig::DB_HOST();
-    $username = dbConfig::DB_USERNAME();
-    $password = dbConfig::DB_PASSWORD();
-    $schema = dbConfig::DB_SCHEMA();
-    $port = dbConfig::DB_PORT();
+    $servername = Config::DB_HOST();
+    $username = Config::DB_USERNAME();
+    $password = Config::DB_PASSWORD();
+    $schema = Config::DB_SCHEMA();
+    $port = Config::DB_PORT();
     $this->conn = new PDO("mysql:host=$servername;dbname=$schema;port=$port", $username, $password);
     // set the PDO error mode to exception
     $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
