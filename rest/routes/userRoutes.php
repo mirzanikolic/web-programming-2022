@@ -46,4 +46,9 @@ Flight::route('POST /users/login', function(){
   }
   });
 
+  //Register user
+  Flight::route('POST /users/register', function(){
+    console.log("Bravo");
+  })
+
  ?>

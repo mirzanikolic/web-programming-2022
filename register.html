@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>FindTutors</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="login.css">
+  <link href="icon.ico" rel="icon" type="image/png">
+</head>
+
+<body>
+  <main>
+    <section class="wrapper">
+      <div class="container">
+        <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
+          <div class="logo">
+            <img src="icon.ico" class="img-fluid" alt="Logo">
+          </div>
+          <form id="register-form" class="rounded bg-white shadow py-5 px-4">
+            <h3 class="text-dark fw-bolder fs-4 mb-2">FindTutors</h3>
+            <div class="fw-normal text-muted mb-4"> Already have an account?
+              <a href="login.html" class="text-primary fw-bold text-decoration-none">Login</a>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-floating mb-3">
+                  <input type="text" name="name" class="form-control" id="floatingInput" placeholder="First name">
+                  <label for="floatingInput">First name</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-floating">
+                  <input type="text" name="surname" class="form-control" id="floatingPassword" placeholder="Last name">
+                  <label for="floatingPassword">Last name</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-floating mb-3">
+                  <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-floating">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
+                </div>
+              </div>
+            </div>
+            <div class="mt-2 text-end">
+              <a href="#" class="text-primary fw-bold text-decoration-none">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-primary submit_btn w-100 my-4">Login</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+  <script src="js/UserService.js"></script>
+  <script type="text/javascript">
+    UserService.init();
+  </script>
+</body>
