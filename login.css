@@ -23,7 +23,6 @@ body{
 /* Main CSS */
 .wrapper{
     padding:0 0 100px;
-    background-image:url('images/bg.png');
     background-repeat: no-repeat;
     background-position: bottom center;
     background-attachment: fixed;
@@ -32,6 +31,7 @@ body{
 }
 .wrapper .logo img{
     max-width:40%;
+    padding-top: 0;
 }
 .wrapper input{
     background-color: var(--light-white);

@@ -48,7 +48,9 @@ Flight::route('POST /users/login', function(){
 
   //Register user
   Flight::route('POST /users/register', function(){
-    console.log("Bravo");
-  })
+    $register = Flight::request()->data->getData();
+    Flight::userService()->register($register);
+    Flight::json(["message" => "Account created."]);
+    });
 
  ?>
